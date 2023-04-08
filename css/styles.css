@@ -56,7 +56,7 @@ img {
   overflow: hidden;
 }
 .container {
-  width: 1158px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -154,8 +154,8 @@ header {
 }
 /* main content page Studio*/
 .section {
-  padding-bottom: 120px;
-  padding-top: 120px;
+  padding-bottom: 112px;
+  padding-top: 112px;
 }
 .studio-section-hero {
   background-color: var(--color-grey);
@@ -206,7 +206,7 @@ header {
 }
 /*section*/
 .sections-litle-titles {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -214,6 +214,7 @@ header {
   margin-bottom: 8px;
 }
 .studio-section-text {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -246,20 +247,14 @@ header {
 }
 .section-one-list {
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 .section-one-list-item {
-  flex-basis: calc((100% - 72px) / 4);
+  width: 100%;
 }
 .goals-icon-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100%);
-  height: 112px;
-  background-color: var(--color-cloud);
-  margin-bottom: 8px;
+  display: none;
 }
 .section-our-team {
   background: var(--color-cloud);
@@ -748,4 +743,46 @@ header {
 }
 .modal-check:focus + .check-text::before {
   border-color: var(--color-iris);
+}
+@media screen and (min-widht: 4280px) {
+  .container {
+    width: 426px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .goals-icon-wrap {
+    display: none;
+  }
+  .goals-icon-item {
+    display: none;
+  }
+}
+@media screen and (min-widht: 768px), (max-widht: 1158px) {
+  .container {
+    width: 766px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media screen and (min-widht: 1158px) {
+  .container {
+    width: 1148px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .goals-icon-wrap {
+    display: none;
+  }
+  .goals-icon-item {
+    display: none;
+  }
+  .goals-icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100%);
+    height: 112px;
+    background-color: var(--color-cloud);
+    margin-bottom: 8px;
+  }
 }
