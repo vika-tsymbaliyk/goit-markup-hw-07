@@ -9,6 +9,11 @@
   --color-grey: #2e2f42;
   --color-white: #ffffff;
   --color-dairy: #fcfcfc;
+  --drad: linear-gradient(
+    to right,
+    rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7)
+  );
 }
 *,
 *::before,
@@ -74,12 +79,13 @@ header {
   padding-bottom: 24px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 .logotype {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-iris);
@@ -152,6 +158,13 @@ header {
 .address-item:not(:last-child) {
   margin-right: 40px;
 }
+.mobile-menu-open {
+  border: none;
+  background-color: transparent;
+  display: block;
+  margin-left: 0 auto;
+}
+
 /* main content page Studio*/
 .section {
   padding-bottom: 112px;
@@ -164,12 +177,7 @@ header {
 .overlay {
   max-width: 1440px;
   margin: 0 auto;
-  background-image: linear-gradient(
-      to right,
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(../images/people-office-1.jpg);
+  background-image: var(--drad), url(../images/people-office-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -271,6 +279,8 @@ header {
 .our-team-list {
   display: flex;
   gap: 24px;
+  align-items: center;
+  justify-content: center;
 }
 .team-card {
   background-color: var(--color-white);
@@ -313,6 +323,7 @@ header {
   display: flex;
   justify-content: center;
   gap: 24px;
+  width: 100%;
 }
 .customers-list-item {
   display: flex;
@@ -744,37 +755,158 @@ header {
 .modal-check:focus + .check-text::before {
   border-color: var(--color-iris);
 }
-@media screen and (min-widht: 4280px) {
+@media screen and (min-width: 428px) {
   .container {
-    width: 426px;
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 100%;
+  }
+  .menu-nav {
+    display: none;
+  }
+  .adress-list {
+    display: none;
+  }
+  .header-conainer {
+    padding: 24px 16px;
+    margin: 0;
+  }
+  .overlay {
+    background-image: var(--drad), url(../images/hero-bg-mob.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .overlay {
+      background-image: var(--drad), url(../images/hero-bg-mob-2x.jpg);
+    }
+  }
+  .studio-section-hero-title {
+    font-size: 36px;
+    line-height: 1.11;
+  }
+  .section {
+    padding-bottom: 96px;
+    padding-top: 96px;
+  }
+  .sections-litle-titles {
+    text-align: center;
   }
   .goals-icon-wrap {
     display: none;
   }
-  .goals-icon-item {
+  .about {
     display: none;
   }
+  .our-team-list {
+    flex-direction: column;
+    gap: 72px;
+    align-items: center;
+    justify-content: center;
+  }
+  .team-card {
+    flex-basis: calc(100% - 164px);
+  }
+  .customers-list {
+    flex-wrap: wrap;
+    gap: 72px 16px;
+  }
+  .customers-list-item {
+    width: calc((100% - 16px) / 2);
+  }
 }
-@media screen and (min-widht: 768px), (max-widht: 1158px) {
+@media screen and (min-width: 768px) and (max-width: 1158px) {
   .container {
     width: 766px;
-    padding-left: 15px;
-    padding-right: 15px;
+  }
+  .menu-nav {
+    display: block;
+  }
+  .adress-list {
+    display: block;
+  }
+  .overlay {
+    background-image: var(--drad), url(../images/hero-bg-tab.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .overlay {
+      background-image: var(--drad), url(../images/hero-bg-tab-2x.jpg);
+    }
+  }
+  .studio-section-hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+  }
+  .section-one-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 72px 24px;
+  }
+  .section-one-list-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+  .sections-litle-titles {
+    text-align: left;
+  }
+  .about {
+    display: none;
+  }
+  .our-team-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 64px 24px;
+  }
+  .team-card {
+    flex-basis: calc((100% - 240px) / 2);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .customers-list {
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+  .customers-list-item {
+    width: calc((100% - 48px) / 3);
   }
 }
-@media screen and (min-widht: 1158px) {
+@media screen and (min-width: 1158px) {
   .container {
-    width: 1148px;
+    width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
   }
-  .goals-icon-wrap {
-    display: none;
+  .menu-nav {
+    display: block;
   }
-  .goals-icon-item {
-    display: none;
+  .adress-list {
+    display: block;
+  }
+  .overlay {
+    background-image: var(--drad), url(../images/hero-bg-dt.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .overlay {
+      background-image: var(--drad), url(../images/hero-bg-dt-2x.jpg);
+    }
+  }
+  .studio-section-hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+  }
+  .section {
+    padding-bottom: 122px;
+    padding-top: 120px;
+  }
+  .section-one-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .section-one-list-item {
+    flex-basis: calc((100% - 72px) / 4);
   }
   .goals-icon-wrap {
     display: flex;
@@ -784,5 +916,33 @@ header {
     height: 112px;
     background-color: var(--color-cloud);
     margin-bottom: 8px;
+  }
+  .sections-litle-titles {
+    font-weight: 500;
+    text-align: left;
+  }
+  .studio-section-text {
+    font-weight: 400;
+  }
+  .about {
+    display: block;
+  }
+  .our-team-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .team-card {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .customers-list {
+    gap: 24px;
+  }
+  .customers-list-item {
+    width: calc((100% - 120px) / 6);
   }
 }
