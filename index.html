@@ -53,20 +53,21 @@
             </li>
           </ul>
         </address>
-        <button type="button" class="mobile-menu-open">
+        <button type="button" class="mobile-menu-open js-open-menu" aria-expanded="false"
+        aria-controls="mobile-menu">
           <svg width="32" height="22" class="mobile-menu-open-icon">
             <use href="./images/icons.svg#icon-charm_menu-hamburger-converted"></use>
           </svg>
         </button>
       </div>
-      <div class="mob-menu">
-         <button type="button" class="mob-menu-close">
+      <div class="mob-menu js-menu-container" id="mobile-menu">
+        <div>
+         <button type="button" class="mob-menu-close js-close-menu">
           <svg width="8" height="8" class="mob-menu-close-icon">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
-        </button>
-        
-        <ul class="mob-menu-list list">
+          </button>
+          <ul class="mob-menu-list list">
             <li class="mob-menu-item">
               <a class="mob-menu-link current link" href="./index.html">Studio</a>
             </li>
@@ -76,21 +77,22 @@
             <li class="mob-menu-item">
               <a class="mob-menu-link link curent" href="">Contacts</a>
             </li>
-        </ul>
+           </ul>
+      </div>
+      <div>
         <ul class="mob-menu-adress list">
-           <li class="mob-menu-address-item">
+           <li class="mob-menu-adress-item">
               <a class="link mob-menu-tel" href="tel:+110001111111"
                 >+11 (000) 111-11-11</a
               >
             </li>
-            <li class="mob-menu-address-item">
+            <li class="mob-menu-adress-item">
               <a class="link mob-menu-email" href="mailto:info@devstudio.com"
                 >info@devstudio.com</a
               >
             </li>
           </ul>
-      
-           <ul class="mob-menu-social-media-list list">
+          <ul class="mob-menu-social-media-list list">
                 <li class="mob-menu-social-media-item">
                     <a href="" class="mob-menu-social-media-link">
                       <svg width="24" height="24" class="mob-menu-social-media-icon">
@@ -115,7 +117,7 @@
                         </svg>
                   </a></li>
                 </ul>
-               
+        </div>
       </div>
     </header>
     <!-- Основний контент -->
@@ -419,7 +421,7 @@
       </section>
     </main>
     <!-- футер-->
-    <!-- <footer class="footer">
+    <footer class="footer">
       <div class="container footer-wrap">
         <div class="footer-wrap-logo-text">
           <a class="link logotype footer-logo" href="./index.html"
@@ -459,7 +461,7 @@
         <div class="footer-form-wrap">
           <h3 class="social-media-title">Subscribe</h3>
           <form name="subscription" class="footer-form"> 
-            <label for="footer-email" class=""></label>      
+            <label for="footer-email" class="footer-label"></label>      
             <input class="footer-input" type="email" name="email" placeholder="E-mail" id="footer-email">
             <button type="submit" class="footer-form-btn"><span class="footer-form-btn-text">Subscribe</span>
               <svg width="24" height="24" class="footer-form-btn-icon"><use href="./images/icons.svg#icon-frame"></use></svg>
@@ -468,7 +470,7 @@
           </form>
         </div>
       </div>
-    </footer> -->
+    </footer>
     <!-- модальне вікно -->
     <div class="backdrop is-hidden" data-modal>
       <!--is-hidden-->

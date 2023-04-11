@@ -94,9 +94,6 @@ header {
 .logotype span {
   color: var(--color-grey);
 }
-.menu-nav {
-  display: flex;
-}
 .list {
   list-style-type: none;
 }
@@ -116,7 +113,12 @@ header {
   position: relative;
   display: block;
 }
-
+.menu-nav {
+  display: none;
+}
+.adress-list {
+  display: none;
+}
 .current {
   color: var(--color-ocean);
 }
@@ -130,9 +132,6 @@ header {
 .address-link:hover,
 .address-link:focus {
   color: var(--color-ocean);
-}
-.adress-list {
-  display: flex;
 }
 .address-item:not(:last-child) {
   margin-right: 40px;
@@ -153,6 +152,13 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: auto;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+.mob-menu.is-open {
+  transform: translateX(0);
 }
 .mob-menu-link {
   font-weight: 700;
@@ -178,7 +184,10 @@ header {
   letter-spacing: 0.02em;
   color: var(--color-slate);
 }
-.mob-menu-address-item:not(:last-child) {
+.mob-menu-adress {
+  margin-bottom: 40px;
+}
+.mob-menu-adress-item:not(:last-child) {
   margin-bottom: 40px;
 }
 .mob-menu-social-media-list {
@@ -188,7 +197,6 @@ header {
   padding: 0 60px 0 40px;
 }
 .mob-menu-social-media-item {
-  width: calc((100%-168px) / 4);
   border-radius: 50%;
   background-color: var(--color-iris);
 }
@@ -196,6 +204,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 .mob-menu-social-media-icon {
   fill: var(--color-cloud);
@@ -401,7 +411,13 @@ header {
 /*----------------footer----------------------------*/
 .footer {
   background: var(--color-grey);
-  padding: 100px 0px;
+  padding: 96px 0px;
+}
+.footer-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 72px;
 }
 .footer .logotype span {
   color: var(--color-cloud);
@@ -416,16 +432,18 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-cornflower);
+  max-width: 268px;
 }
-.footer-wrap {
-  display: flex;
-}
+
 .footer-wrap-logo-text {
-  width: 264px;
-  margin-right: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .footer-social-media-wrap {
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .social-media-title {
   font-weight: 500;
@@ -434,6 +452,7 @@ header {
   letter-spacing: 0.02em;
   color: var(--color-white);
   margin-bottom: 16px;
+  text-align: center;
 }
 .social-media-list {
   display: flex;
@@ -446,7 +465,7 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--color-slate);
+  background-color: var(--color-iris);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-media-link:hover,
@@ -456,18 +475,25 @@ header {
 .footer-social-media-icon {
   fill: var(--color-white);
 }
-
+.footer-form-wrap > .social-media-title {
+  margin-bottom: 0;
+}
 .footer-form {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 16px;
+}
+.footer-label {
+  width: 100%;
 }
 .footer-input {
+  width: 100%;
   background-color: transparent;
   height: 40px;
   border: 1px solid var(--color-white);
   border-radius: 4px;
-  margin-right: 24px;
   padding: 8px 16px;
   min-width: 264px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -609,8 +635,8 @@ header {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
-  width: 400px;
-  min-height: 576px;
+  width: calc(100%-36px);
+  min-height: 576px;*/
   padding: 72px 24px 24px;
   background-color: var(--color-dairy);
   border-radius: 5px;
@@ -618,6 +644,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow::content;
 }
 .is-hidden {
   opacity: 0;
@@ -803,12 +830,6 @@ header {
 @media screen and (min-width: 428px) and (max-width: 768px) {
   .container {
     max-width: 426px;
-  }
-  .menu-nav {
-    display: none;
-  }
-  .adress-list {
-    display: none;
   }
   .header-conainer {
     padding: 24px 16px;
@@ -1023,5 +1044,22 @@ header {
   }
   .customers-list-item {
     width: calc((100% - 120px) / 6);
+  }
+  .footer {
+    padding: 100px 0px;
+  }
+  .footer-wrap {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-wrap-logo-text {
+    width: 264px;
+    margin-right: 120px;
+  }
+  .footer-social-media-wrap {
+    margin-right: auto;
+  }
+  .footer-input {
+    margin-right: 24px;
   }
 }
