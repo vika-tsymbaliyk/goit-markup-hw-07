@@ -648,7 +648,8 @@ header {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
-  width: calc((100%-36px));
+  width: calc(100%-36px);
+  max-width: 408px;
   max-height: 576px;
   padding: 72px 24px 24px;
   background-color: var(--color-dairy);
@@ -895,6 +896,9 @@ header {
   .footer-form-wrap > .social-media-title {
     margin-bottom: 0;
   }
+  .modal {
+    max-width: 392px;
+  }
 }
 @media screen and (min-width: 768px) {
   .container {
@@ -1088,5 +1092,8 @@ header {
   }
   .footer-wrap-logo-text {
     margin-right: 120px;
+  }
+  .modal {
+    max-height: 676px;
   }
 }
