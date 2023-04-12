@@ -214,9 +214,8 @@ header {
 }
 .mob-menu-social-media-list {
   display: flex;
-  gap: 56px;
+  justify-content: space-between;
   width: 100%;
-  padding: 0 60px 0 40px;
 }
 .mob-menu-social-media-item {
   border-radius: 50%;
@@ -244,8 +243,8 @@ header {
 }
 /* main content page Studio*/
 .section {
-  padding-bottom: 112px;
-  padding-top: 112px;
+  padding-bottom: 96px;
+  padding-top: 96px;
 }
 .studio-section-hero {
   background-color: var(--color-grey);
@@ -260,9 +259,9 @@ header {
   background-position: center;
 }
 .studio-section-hero-title {
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.07;
+  line-height: 1.11;
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--color-white);
@@ -296,6 +295,7 @@ header {
   letter-spacing: 0.02em;
   color: var(--color-grey);
   margin-bottom: 8px;
+  text-align: center;
 }
 .studio-section-text {
   font-weight: 500;
@@ -340,6 +340,9 @@ header {
 .goals-icon-wrap {
   display: none;
 }
+.about {
+  display: none;
+}
 .section-our-team {
   background: var(--color-cloud);
 }
@@ -354,7 +357,8 @@ header {
 }
 .our-team-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
   align-items: center;
   justify-content: center;
 }
@@ -857,28 +861,11 @@ header {
       background-image: var(--drad), url(../images/hero-bg-mob-2x.jpg);
     }
   }
-  .studio-section-hero-title {
-    font-size: 36px;
-    line-height: 1.11;
-  }
-  .section {
-    padding-bottom: 96px;
-    padding-top: 96px;
-  }
-  .sections-litle-titles {
-    text-align: center;
-  }
   .goals-icon-wrap {
     display: none;
   }
   .about {
     display: none;
-  }
-  .our-team-list {
-    flex-direction: column;
-    gap: 72px;
-    align-items: center;
-    justify-content: center;
   }
   .team-card {
     flex-basis: calc(100% - 164px);
@@ -942,6 +929,10 @@ header {
       background-image: var(--drad), url(../images/hero-bg-tab-2x.jpg);
     }
   }
+  .section {
+    padding-bottom: 112px;
+    padding-top: 112px;
+  }
   .studio-section-hero-title {
     font-size: 56px;
     line-height: 1.07;
@@ -956,9 +947,6 @@ header {
   }
   .sections-litle-titles {
     text-align: left;
-  }
-  .about {
-    display: none;
   }
   .our-team-list {
     flex-direction: row;
@@ -1074,9 +1062,9 @@ header {
   }
   .our-team-list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     gap: 24px;
+    align-items: center;
+    justify-content: center;
   }
   .team-card {
     flex-basis: calc((100% - 72px) / 4);
