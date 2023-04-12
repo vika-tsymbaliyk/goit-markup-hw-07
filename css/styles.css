@@ -486,6 +486,15 @@ header {
   margin-bottom: 16px;
   text-align: center;
 }
+.form-wrap-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  margin-bottom: 16px;
+  text-align: center;
+}
 .social-media-list {
   display: flex;
   gap: 16px;
@@ -596,7 +605,13 @@ header {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-titles {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--color-grey);
   margin-bottom: 8px;
+  text-align: left;
 }
 .portfolio-section-text {
   font-size: 16px;
@@ -635,6 +650,10 @@ header {
 .img-top-wrap {
   position: relative;
   overflow: hidden;
+}
+.portfolio-img {
+  display: block;
+  width: 100%;
 }
 .portfolio-img-cover-text {
   position: absolute;
@@ -989,12 +1008,23 @@ header {
     flex-direction: row;
     gap: 0;
   }
+  .form-wrap-title {
+    text-align: left;
+  }
   .footer-input {
     margin-right: 24px;
   }
   .modal {
     width: calc(100% - 36px);
     max-width: 408px;
+  }
+  .portfolio-img-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+  .portfolio-card {
+    flex-basis: calc((100% - 24px) / 2);
   }
 }
 @media screen and (min-width: 1158px) {
