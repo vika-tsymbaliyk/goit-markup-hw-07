@@ -412,11 +412,11 @@ header {
   justify-content: center;
   gap: 24px;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 72px 16px;
 }
 .customers-list-item {
-  display: flex;
-  width: calc((100% - 120px) / 6);
-  height: 88px;
+  width: calc((100% - 16px) / 2);
 }
 .customers-link {
   display: flex;
@@ -471,6 +471,7 @@ header {
 .footer-wrap-logo-text {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .footer-social-media-wrap {
   display: flex;
@@ -898,16 +899,7 @@ header {
   .team-card {
     flex-basis: calc(100% - 164px);
   }
-  .customers-list {
-    flex-wrap: wrap;
-    gap: 72px 16px;
-  }
-  .customers-list-item {
-    width: calc((100% - 16px) / 2);
-  }
-  .footer-wrap-logo-text {
-    align-items: center;
-  }
+
   .footer-form-wrap > .social-media-title {
     margin-bottom: 0;
   }
@@ -984,7 +976,6 @@ header {
     text-align: center;
   }
   .customers-list {
-    flex-wrap: wrap;
     gap: 72px 24px;
   }
   .customers-list-item {
@@ -1000,6 +991,7 @@ header {
   }
   .footer-wrap-logo-text {
     width: 264px;
+    align-items: start;
   }
   .footer-social-media-wrap {
     margin-right: auto;
