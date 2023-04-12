@@ -162,6 +162,9 @@ header {
   top: 24px;
   right: 16px;
 }
+.mobile-menu-open-icon {
+  fill: var(--color-grey);
+}
 .mob-menu {
   position: fixed;
   top: 0;
