@@ -132,15 +132,12 @@ header {
 .address-link:focus {
   color: var(--color-ocean);
 }
-.address-item:not(:last-child) {
-  margin-right: 40px;
-}
 .header-link::after {
   content: "";
   opacity: 0;
   display: block;
   position: absolute;
-  bottom: -25px;
+  bottom: -29px;
   left: 0;
   height: 4px;
   width: 100%;
@@ -232,8 +229,8 @@ header {
   fill: var(--color-cloud);
 }
 .mob-menu-close {
-  background-color: var(--color-cornflower);
-  border: 1px solid var(--color-grey);
+  background-color: rgba(231, 233, 252, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -256,10 +253,17 @@ header {
 .overlay {
   max-width: 1440px;
   margin: 0 auto;
-  background-image: var(--drad), url(../images/people-office-1.jpg);
+  background-image: var(--drad), url(../images/hero-bg-mob.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .overlay {
+    background-image: var(--drad), url(../images/hero-bg-mob-2x.jpg);
+  }
 }
 .studio-section-hero-title {
   font-size: 36px;
@@ -859,6 +863,7 @@ header {
   border-radius: 2px;
   display: block;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
 }
 .check-icon {
   position: absolute;
@@ -882,16 +887,6 @@ header {
   .header-conainer {
     padding: 24px 16px;
     margin: 0;
-  }
-  .overlay {
-    background-image: var(--drad), url(../images/hero-bg-mob.jpg);
-  }
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .overlay {
-      background-image: var(--drad), url(../images/hero-bg-mob-2x.jpg);
-    }
   }
   .goals-icon-wrap {
     display: none;
@@ -919,13 +914,6 @@ header {
   }
   .menu-nav {
     display: flex;
-  }
-  .header-link::after {
-    content: "";
-    opacity: 0;
-    display: block;
-    position: absolute;
-    bottom: -29px;
   }
   .adress-list {
     display: flex;
@@ -1052,7 +1040,7 @@ header {
     color: var(--color-ocean);
   }
   .header-link::after {
-    bottom: -25px;
+    bottom: -26px;
   }
   .adress-list {
     display: flex;
@@ -1142,6 +1130,15 @@ header {
   }
   .footer-wrap-logo-text {
     margin-right: 120px;
+  }
+  .footer-wrap {
+    gap: 0;
+  }
+  .footer-social-media-wrap {
+    align-items: flex-start;
+  }
+  .social-media-title {
+    text-align: left;
   }
   .modal {
     max-height: 676px;
